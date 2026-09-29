@@ -23,6 +23,7 @@
 | 8 | Supabase mặc định cho `anon` gọi được mọi hàm trong schema `public` qua RPC, nên hàm nghiệp vụ nhận `p_actor` có thể bị gọi thẳng từ trình duyệt | Rà soát bảo mật khi thiết kế | `revoke execute ... from anon, authenticated`; smoke test kiểm tra anon key bị chặn |
 | 9 | `.gitignore` mẫu (`.env*`) chặn luôn `.env.example` | `git check-ignore` | Thêm `!.env.example` |
 | 10 | Tài liệu ghi sai số màn hình/API (16 và 22, thực tế là 19 và 25) | Đếm lại file bằng `find` | Sửa tài liệu |
+| 11 | Đăng nhập thành công nhưng vẫn đứng ở màn hình login: sau khi reset DB (tài khoản demo bị tạo lại), router phía client của Next.js dùng lại redirect cũ "/audit → /login" trong cache | Học viên thử trên trình duyệt; log server có `POST /api/auth/login 200` nhưng không có request mở trang tiếp theo | Sau đăng nhập/đăng xuất thì tải lại cả trang (`window.location.replace`) thay vì `router.replace` |
 
 Các điểm nghiệp vụ AI **không được tự quyết** và đã ghi thành giả định (theo câu hỏi Q-06〜Q-09 của LAB-1): cách tính số tiền đủ điều kiện, thứ tự làm tròn, hạn thanh toán, nguồn dữ liệu thanh toán.
 
