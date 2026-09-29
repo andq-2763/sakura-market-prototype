@@ -3,8 +3,8 @@
 Prototype chạy thật cho hệ thống hỗ trợ nghiệp vụ chợ đầu mối thủy sản Sakura (khách hàng Nhật hư cấu).
 Giao diện tiếng Nhật. Mọi dữ liệu đều là dữ liệu giả (mock) cho mục đích đào tạo.
 
-- **URL (Vercel):** `https://〔điền sau khi deploy〕.vercel.app` — mở lên sẽ gặp màn hình đăng nhập trước
-- **Supabase project:** `https://supabase.com/dashboard/project/〔project-ref〕`
+- **URL (Vercel):** https://sakura-market-prototype-xi.vercel.app — mở lên sẽ gặp màn hình đăng nhập trước
+- **Supabase project:** https://supabase.com/dashboard/project/kusbelajyjorqzwwxyea (Region: South Asia / Mumbai)
 - **Stack:** Next.js 16 (App Router, API Route Handlers, `proxy.ts`) · Supabase (Postgres + Auth) · Vercel
 
 > ⚠️ **Lỗi kết nối DB / không đăng nhập được?** Project Supabase gói Free sẽ tự **tạm dừng (Paused)** sau khoảng 7 ngày không có truy cập.
