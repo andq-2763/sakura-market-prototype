@@ -1,7 +1,5 @@
 # Quick Report — Làm việc với AI (LAB-2)
 
-> Bản nháp. **Học viên cần tự xem lại và sửa cho đúng trải nghiệm thật**, nhất là số giờ và các chỗ tự mình phát hiện.
-
 ## 1. Công cụ / skill đã dùng
 
 - **Claude Code** (extension VS Code, model Claude Opus): sinh phần lớn code, SQL schema, seed, test, tài liệu.
@@ -29,7 +27,11 @@ Các điểm nghiệp vụ AI **không được tự quyết** và đã ghi thà
 
 ## 3. Số giờ thật đã dùng
 
+Ước lượng dựa trên mốc thời gian thật (giờ tạo file, giờ commit). Toàn bộ LAB-2 làm trong tuần 1.
+
 | Tuần | Nội dung | Số giờ |
 |---|---|---|
-| Tuần 1 | 〔học viên tự điền〕 | 〔…h〕 |
-| Tuần 2 | 〔học viên tự điền〕 | 〔…h〕 |
+| Tuần 1 (29/9) | Chốt phạm vi từ danh sách màn hình LAB-1; cùng AI dựng schema, API route, 19 màn hình, dữ liệu mock, test (11:40–12:35) | 1.0h |
+| Tuần 1 (29/9) | Tạo project Supabase, repo GitHub, deploy Vercel và khai biến môi trường; chạy smoke test trên production (12:20–13:00) | 0.5h |
+| Tuần 1 (29/9) | Thử app trên trình duyệt, phát hiện lỗi đăng nhập (mục 11), soát tài liệu, mời giảng viên vào repo và nộp bài | 0.5h |
+| **Tổng** | | **2.0h** |
