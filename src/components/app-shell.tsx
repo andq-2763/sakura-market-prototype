@@ -1,7 +1,7 @@
 'use client';
 // ログイン後の共通レイアウト: 権限に応じたメニュー、業務日、利用者、ログアウト
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { createContext, useContext, type ReactNode } from 'react';
 import { ROLES, type Permission, type Role } from '@/lib/permissions';
 import { apiSend, useApi } from './use-api';
@@ -35,14 +35,14 @@ const NAV: { href: string; label: string; permission?: Permission; group: string
 export function AppShell({ children }: { children: ReactNode }) {
   const { data: me, error } = useApi<Me>('/api/me');
   const pathname = usePathname();
-  const router = useRouter();
   const items = NAV.filter((n) => !n.permission || me?.user.permissions.includes(n.permission));
   const groups = [...new Set(items.map((n) => n.group))];
   const active = (href: string) => (href === '/' ? pathname === '/' : pathname === href || (pathname.startsWith(`${href}/`) && href !== '/trades') || (href === '/trades' && /^\/trades\/\d+/.test(pathname)));
 
   async function logout() {
     await apiSend('/api/auth/logout', {});
-    router.replace('/login');
+    // ページ全体を読み直し、ログイン中の画面・キャッシュを残さない
+    window.location.replace(new URL('/login', window.location.origin).href);
   }
 
   return (

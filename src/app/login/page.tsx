@@ -1,12 +1,11 @@
 'use client';
 // ログイン画面（SCR-001）。未ログインで他の画面を開くと proxy.ts がここへ転送する
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { Suspense, useState, type FormEvent } from 'react';
 import { apiSend, useAction } from '@/components/use-api';
 import { Button, Field, Input, Message } from '@/components/ui-primitives';
 
 function LoginForm() {
-  const router = useRouter();
   const next = useSearchParams().get('next');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,8 +14,11 @@ function LoginForm() {
   async function submit(e: FormEvent) {
     e.preventDefault();
     const ok = await run(() => apiSend('/api/auth/login', { email, password }));
+    if (!ok) return;
     // 外部URLへの転送を防ぐため、同一サイト内のパスのみ許可する
-    if (ok) router.replace(next && next.startsWith('/') && !next.startsWith('//') ? next : '/');
+    const target = next && next.startsWith('/') && !next.startsWith('//') ? next : '/';
+    // ページ全体を読み直す: クライアントのルーターキャッシュに残った「ログイン画面への転送」を使わせず、新しいセッションCookieで取得する
+    window.location.replace(new URL(target, window.location.origin).href);
   }
 
   return (
