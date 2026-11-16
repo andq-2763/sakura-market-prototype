@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><title>桜水産市場 Wireframes v1.0</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans CJK JP","Noto Sans JP","Hiragino Sans",sans-serif;background:#ddd;color:#222;font-size:13px}
+.frame{background:#fff;position:relative;overflow:hidden;border:1px solid #888}
+.pc{width:1280px;height:800px}.tab{width:1024px;height:768px;font-size:16px}
+.top{height:44px;background:#333;color:#fff;display:flex;align-items:center;padding:0 14px;gap:18px}
+.top b{font-size:15px}.top .sp{flex:1}.top .chip{background:#555;padding:3px 10px;border-radius:12px;font-size:12px}
+.side{position:absolute;top:44px;left:0;bottom:0;width:170px;background:#f0f0f0;border-right:1px solid #bbb;padding:10px 0}
+.side div{padding:7px 16px;color:#444}.side .on{background:#ccc;font-weight:bold;border-left:4px solid #333}
+.main{position:absolute;top:44px;left:170px;right:0;bottom:0;padding:14px 18px;overflow:hidden}
+.tab .main{left:0;padding:14px}
+h1{font-size:18px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.sec{border:1.5px solid #999;border-radius:4px;padding:10px 12px 10px;margin-bottom:10px;position:relative;background:#fafafa}
+.sec>.lbl{position:absolute;top:-10px;left:8px;background:#fff;padding:0 6px;font-weight:bold;font-size:12px}
+.row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.f{display:flex;flex-direction:column;gap:3px}.f label{font-size:11px;color:#555}.f label i{color:#c00;font-style:normal}
+.in{border:1.5px solid #777;background:#fff;height:30px;padding:5px 8px;border-radius:3px;min-width:80px;color:#333}
+.in.ro{background:#eee;border-style:dashed}.in.focus{border:2.5px solid #000;box-shadow:0 0 0 3px #bbb}.in.err{border:2.5px solid #000;background:repeating-linear-gradient(45deg,#fff,#fff 5px,#eee 5px,#eee 10px)}
+.tab .in{height:52px;font-size:20px;padding:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1.5px solid #333;background:#fff;height:30px;padding:0 14px;border-radius:3px;font-weight:bold}
+.btn.pri{background:#333;color:#fff}.btn.dis{border-color:#bbb;color:#aaa;background:#f3f3f3}
+.tab .btn{height:60px;min-width:120px;font-size:18px}
+table{border-collapse:collapse;width:100%;font-size:12px;background:#fff}
+th,td{border:1px solid #aaa;padding:4px 6px;text-align:left;white-space:nowrap}th{background:#e4e4e4}
+td.n{text-align:right}
+.st{display:inline-block;border:1px solid #555;border-radius:10px;padding:0 8px;font-size:11px;background:#fff}
+.st.dark{background:#333;color:#fff}.st.hatch{background:repeating-linear-gradient(45deg,#fff,#fff 3px,#ccc 3px,#ccc 6px)}
+.msg{border:2px solid #000;background:#f2f2f2;padding:8px 10px;font-weight:bold}
+.msg.warn{border-style:dashed}
+.n1{position:absolute;width:24px;height:24px;border-radius:12px;background:#000;color:#fff;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;z-index:9;box-shadow:0 0 0 2px #fff}
+.cap{position:absolute;bottom:6px;right:10px;font-size:11px;color:#777}
+.kbd{display:inline-block;border:1px solid #777;border-bottom-width:2px;border-radius:3px;padding:0 5px;font-size:11px;background:#fff;margin:0 2px}
+.tile{border:1.5px solid #555;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:18px;height:64px;background:#fff}
+.tile.on{background:#333;color:#fff}
+.grid{display:grid;gap:8px}
+.note{font-size:11px;color:#555}
+.modal{position:absolute;border:2px solid #000;background:#fff;box-shadow:6px 6px 0 #999;padding:12px}
+.b{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:18px;padding:0 4px;border-radius:9px;background:#000;color:#fff;font-size:10px;font-weight:bold;margin-right:4px;vertical-align:middle;font-style:normal}
+.tab .b{font-size:11px;height:20px}
+.f label i.b,.sec .lbl i.b{color:#fff}
+ .wrap{padding:20px;display:flex;flex-direction:column;gap:30px} h2{font-size:16px}</style></head><body><div class="wrap">
+<h2 id="SCR-040">SCR-040</h2><div class="frame pc" data-id="SCR-040"><div class="top"><b>桜水産市場 業務支援</b><span class="chip">業務日 2026-11-15（日）</span><span class="chip">SCR-040 相対取引 入力・確定</span><span class="sp"></span><span>取引担当 山田</span><span class="chip">ログアウト</span></div><div class="side"><div class="">ホーム</div><div class="">参加者</div><div class="">ロット</div><div class="on">相対取引 入力</div><div class="">せり結果</div><div class="">取引一覧</div><div class="">引渡しボード</div><div class="">日次照合・締め</div><div class="">修正依頼</div><div class="">完納奨励金</div><div class="">料率版</div><div class="">帳票・会計連携</div><div class="">監査ログ</div></div>
+<div class="main">
+<h1>相対取引 入力・確定 <span class="note">Tab / Enter のみで連続入力。<span class="kbd">F9</span>確定 <span class="kbd">Esc</span>クリア <span class="kbd">F2</span>ロット検索</span></h1>
+<div class="sec"><span class="lbl"><i class="b">A</i>取引入力</span>
+ <div class="row">
+  <div class="f"><label><i class="b">A-1</i>取引種別</label><div class="in ro" style="width:70px">相対</div></div>
+  <div class="f"><label><i class="b">A-2</i>業務日</label><div class="in ro" style="width:110px">2026-11-15</div></div>
+  <div class="f"><label><i class="b">A-3</i>ロットコード<i>*</i></label><div class="in" style="width:150px">L261115-012</div></div>
+  <div class="f"><label><i class="b">A-4</i>品目 / 荷主</label><div class="in ro" style="width:200px">まぐろ(kg) / 第一桜丸</div></div>
+  <div class="f"><label><i class="b">A-5</i>残数量</label><div class="in ro" style="width:90px;text-align:right">84.5 kg</div></div>
+ </div>
+ <div class="row" style="margin-top:8px">
+  <div class="f"><label><i class="b">A-6</i>買手コード<i>*</i></label><div class="in err" style="width:110px">N03</div></div>
+  <div class="f"><label><i class="b">A-7</i>買手名 / 区分</label><div class="in ro" style="width:220px">海幸 / 仲卸（許可）</div></div>
+  <div class="f"><label><i class="b">A-8</i>数量<i>*</i></label><div class="in" style="width:90px;text-align:right">20.0</div></div>
+  <div class="f"><label><i class="b">A-9</i>単価（円）<i>*</i></label><div class="in" style="width:100px;text-align:right">4,800</div></div>
+  <div class="f"><label><i class="b">A-10</i>金額（税抜）</label><div class="in ro" style="width:120px;text-align:right">96,000</div></div>
+  <span class="btn pri"><i class="b">A-11</i>確定 F9</span><span class="btn"><i class="b">A-12</i>クリア Esc</span>
+ </div>
+</div>
+<div class="sec"><span class="lbl"><i class="b">B</i>確定前チェック（参考表示。確定時にサーバで再判定）</span>
+ <div class="row" style="gap:28px">
+  <div><i class="b">B-1</i>参加資格：<span class="st hatch">期限切れ</span> 許可 K-N03-24 最終有効日 2026-11-14</div>
+  <div><i class="b">B-2</i>ロット状態：<span class="st">公開</span></div>
+  <div><i class="b">B-3</i>残数量：84.5 ≥ 20.0 <span class="st">OK</span></div>
+  <div><i class="b">B-4</i>業務日：<span class="st">営業中</span></div>
+ </div>
+</div>
+<div class="msg" style="margin-bottom:10px"><i class="b">C</i>E-ELG-03 確定できません：買手 N03（仲卸）の許可は 2026-11-14 で期限切れです。取引は作成されていません。照合事務局へ確認してください。</div>
+<div class="sec"><span class="lbl"><i class="b">D</i>本日の確定済み（自分の入力・新しい順）</span>
+<table><tr><th><i class="b">D-1</i>取引コード</th><th>確定時刻</th><th>ロット</th><th>品目</th><th>買手</th><th>数量</th><th>単価</th><th>金額</th><th>引渡し</th><th><i class="b">D-2</i>操作</th></tr>
+<tr><td>T261115-0143</td><td>05:42</td><td>L261115-012</td><td>まぐろ</td><td>N01 丸浜商店</td><td class="n">30.0</td><td class="n">4,800</td><td class="n">144,000</td><td><span class="st">待機中</span></td><td><u>取消</u> <u>取引票</u></td></tr>
+<tr><td>T261115-0139</td><td>05:39</td><td>L261115-007</td><td>さば</td><td>B01 さくらスーパー</td><td class="n">12.0</td><td class="n">2,300</td><td class="n">27,600</td><td><span class="st">引渡し中</span></td><td><span style="color:#aaa">取消不可</span> <u>取引票</u></td></tr>
+<tr><td>T261115-0131</td><td>05:31</td><td>L261115-003</td><td>あじ</td><td>K01 寿司 はま田</td><td class="n">3.0</td><td class="n">3,100</td><td class="n">9,300</td><td><span class="st dark">完了</span></td><td><span style="color:#aaa">取消不可</span> <u>取引票</u></td></tr>
+</table></div>
+<div class="cap">Wireframe v1.0 — 状態: 資格エラー（E-ELG-03）表示中</div>
+</div></div>
+<h2 id="SCR-051-052">SCR-051-052</h2><div class="frame pc" data-id="SCR-051-052"><div class="top"><b>桜水産市場 業務支援</b><span class="chip">業務日 2026-11-15（日）</span><span class="chip">SCR-051/052 せり結果 入力・確認</span><span class="sp"></span><span>取引担当 佐藤（せり進行役）</span><span class="chip">ログアウト</span></div><div class="side"><div class="">ホーム</div><div class="">参加者</div><div class="">ロット</div><div class="">相対取引 入力</div><div class="on">せり結果</div><div class="">取引一覧</div><div class="">引渡しボード</div><div class="">日次照合・締め</div><div class="">修正依頼</div><div class="">完納奨励金</div><div class="">料率版</div><div class="">帳票・会計連携</div><div class="">監査ログ</div></div>
+<div class="main">
+<h1>せり結果 入力・確認 <span class="note">人が確定した最終結果のみ記録。手やり・符丁の自動認識は行いません（FR-SERI-01）</span></h1>
+<div style="display:flex;gap:12px">
+<div style="width:430px">
+<div class="sec"><span class="lbl"><i class="b">A</i>最終結果入力（SCR-051）</span>
+ <div class="grid" style="grid-template-columns:1fr 1fr">
+  <div class="f"><label><i class="b">A-1</i>せりセッション</label><div class="in">06:30 第1せり場 ▼</div></div>
+  <div class="f"><label><i class="b">A-2</i>ロットコード<i>*</i></label><div class="in">L261115-020</div></div>
+  <div class="f"><label><i class="b">A-3</i>落札者コード<i>*</i></label><div class="in">B01</div></div>
+  <div class="f"><label><i class="b">A-4</i>落札者名</label><div class="in ro">さくらスーパー（売買参加者）</div></div>
+  <div class="f"><label><i class="b">A-5</i>数量<i>*</i></label><div class="in" style="text-align:right">8.0 箱</div></div>
+  <div class="f"><label><i class="b">A-6</i>単価（円）<i>*</i></label><div class="in" style="text-align:right">3,600</div></div>
+  <div class="f"><label><i class="b">A-7</i>結果時刻<i>*</i></label><div class="in">06:41</div></div>
+  <div class="f"><label><i class="b">A-8</i>金額</label><div class="in ro" style="text-align:right">28,800</div></div>
+ </div>
+ <div style="margin-top:10px;display:flex;gap:8px"><span class="btn pri"><i class="b">A-9</i>確認待ちとして登録</span><span class="btn">クリア</span></div>
+ <p class="note" style="margin-top:8px">登録時点では在庫を引き当てません。確認者の承認時に資格・数量をチェックします。</p>
+</div>
+<div class="sec"><span class="lbl"><i class="b">C</i>差戻し中（自分の入力）</span>
+<table><tr><th>取引コード</th><th>ロット</th><th>差戻し理由</th><th></th></tr>
+<tr><td>T261115-0151</td><td>L261115-018</td><td>単価の桁誤り（口頭確認 2,900）</td><td><u>修正して再提出</u></td></tr></table></div>
+</div>
+<div style="flex:1">
+<div class="sec"><span class="lbl"><i class="b">B</i>確認待ち一覧（SCR-052）— 入力者以外が確認</span>
+<table><tr><th><i class="b">B-1</i>取引コード</th><th>時刻</th><th>ロット/品目</th><th>落札者</th><th>数量</th><th>単価</th><th>入力者</th><th><i class="b">B-2</i>確認</th></tr>
+<tr><td>T261115-0158</td><td>06:44</td><td>L261115-021 ぶり</td><td>N02 山二水産</td><td class="n">5.0尾</td><td class="n">7,200</td><td>鈴木</td><td><span class="btn pri" style="height:22px">承認</span> <span class="btn" style="height:22px">差戻し</span></td></tr>
+<tr><td>T261115-0157</td><td>06:41</td><td>L261115-020 さば</td><td>B01 さくらスーパー</td><td class="n">8.0箱</td><td class="n">3,600</td><td><b>佐藤（自分）</b></td><td><span class="btn dis" style="height:22px">承認不可（職務分離）</span></td></tr>
+<tr><td>T261115-0155</td><td>06:38</td><td>L261115-019 まだい</td><td>N04 魚竹</td><td class="n">10.0尾</td><td class="n">2,100</td><td>鈴木</td><td><span class="btn pri" style="height:22px">承認</span> <span class="btn" style="height:22px">差戻し</span></td></tr>
+</table></div>
+<div class="modal" style="position:relative;margin-top:6px;width:520px"><i class="b">D</i><b>差戻し</b> T261115-0158<div class="f" style="margin-top:6px"><label><i class="b">D-1</i>理由<i>*</i></label><div class="in" style="height:48px">単価が結果票と異なる（結果票 7,000）</div></div><div style="margin-top:8px;text-align:right"><span class="btn">キャンセル</span> <span class="btn pri">差戻す</span></div></div>
+</div></div>
+<div class="cap">Wireframe v1.0 — 自分の入力は承認ボタン非活性</div>
+</div></div>
+<h2 id="SCR-030">SCR-030</h2><div class="frame tab" data-id="SCR-030"><div class="top"><b>桜水産市場 業務支援</b><span class="chip">業務日 2026-11-15（日）</span><span class="chip">SCR-030 ロット受付</span><span class="chip" style="background:#fff;color:#000;font-weight:bold">● オフライン：送信待ち 3件</span><span class="sp"></span><span>受付 田中</span><span class="chip">ログアウト</span></div>
+<div class="main">
+<div class="msg warn" style="margin-bottom:10px"><i class="b">Z</i>接続が切れています。入力は端末に保存され、復帰時に自動送信します（最大30分 / 50件）。</div>
+<div style="display:flex;gap:14px">
+<div style="flex:1">
+<div class="sec"><span class="lbl"><i class="b">A</i>荷主・船<i style="color:#c00">*</i></span>
+<div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="tile on">第一桜丸</div><div class="tile">第三浜風丸</div><div class="tile">桜浜漁協</div><div class="tile">港南定置網</div><div class="tile">北浜水産</div><div class="tile">他（検索）</div></div></div>
+<div class="sec"><span class="lbl"><i class="b">B</i>品目<i style="color:#c00">*</i></span>
+<div class="grid" style="grid-template-columns:repeat(4,1fr)"><div class="tile">まぐろ</div><div class="tile">かつお</div><div class="tile on">さば</div><div class="tile">あじ</div><div class="tile">ぶり</div><div class="tile">いか</div><div class="tile">まだい</div><div class="tile">さんま</div></div></div>
+</div>
+<div style="width:330px">
+<div class="sec"><span class="lbl"><i class="b">C</i>初期数量（箱）<i style="color:#c00">*</i></span>
+<div class="in focus" style="text-align:right;font-size:28px;height:60px">42</div>
+<div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:8px"><div class="tile">7</div><div class="tile">8</div><div class="tile">9</div><div class="tile">4</div><div class="tile">5</div><div class="tile">6</div><div class="tile">1</div><div class="tile">2</div><div class="tile">3</div><div class="tile">.</div><div class="tile">0</div><div class="tile">⌫</div></div></div>
+<div style="display:flex;gap:8px"><span class="btn" style="flex:1"><i class="b">D</i>受入票 撮影</span><span class="btn pri" style="flex:1"><i class="b">E</i>登録</span></div>
+</div></div>
+<div class="sec" style="margin-top:8px"><span class="lbl"><i class="b">F</i>直近の受付（この端末）</span>
+<table style="font-size:14px"><tr><th>ロットコード</th><th>時刻</th><th>荷主</th><th>品目</th><th>数量</th><th>状態</th></tr>
+<tr><td>（仮）送信待ち-3</td><td>04:12</td><td>第一桜丸</td><td>あじ</td><td class="n">30箱</td><td><span class="st hatch">送信待ち</span></td></tr>
+<tr><td>L261115-011</td><td>04:05</td><td>北浜水産</td><td>まぐろ</td><td class="n">120.0kg</td><td><span class="st">受付</span></td></tr></table></div>
+<div class="cap">Wireframe v1.0 — タブレット 1024×768、手袋操作（ボタン高さ≥56px）</div>
+</div></div>
+<h2 id="SCR-061">SCR-061</h2><div class="frame tab" data-id="SCR-061"><div class="top"><b>桜水産市場 業務支援</b><span class="chip">業務日 2026-11-15（日）</span><span class="chip">SCR-061 引渡し記録</span><span class="sp"></span><span>配送 高橋</span><span class="chip">ログアウト</span></div>
+<div class="main">
+<div style="display:flex;gap:14px">
+<div style="flex:1">
+<div class="sec"><span class="lbl"><i class="b">A</i>取引の呼出し</span>
+<div class="row"><div class="f" style="flex:1"><label><i class="b">A-1</i>取引コード または ロットコード</label><div class="in">T261115-0139</div></div><span class="btn">呼出し</span></div></div>
+<div class="sec"><span class="lbl"><i class="b">B</i>取引情報</span>
+<table style="font-size:15px"><tr><th>買手</th><td>B01 さくらスーパー（売買参加者）</td></tr><tr><th>品目 / ロット</th><td>さば / L261115-007</td></tr>
+<tr><th><i class="b">B-1</i>有効数量</th><td class="n">12.0 箱（赤黒反映後）</td></tr><tr><th><i class="b">B-2</i>累計引渡し</th><td class="n">5.0 箱（1回）</td></tr><tr><th><i class="b">B-3</i>残数量</th><td class="n"><b>7.0 箱</b></td></tr><tr><th><i class="b">B-4</i>状態</th><td><span class="st">引渡し中</span></td></tr></table></div>
+<div class="msg warn" style="font-size:14px"><i class="b">B-5</i>注意：買手の承認は 11/15 に一時停止されました。記録はできますが「例外（資格確認）」となり、照合事務局の確認後に完了します。</div>
+</div>
+<div style="width:380px">
+<div class="sec"><span class="lbl"><i class="b">C</i>今回の引渡し数量</span>
+<div class="in focus" style="text-align:right;font-size:28px;height:60px">7</div>
+<div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:8px"><div class="tile" style="height:52px">7</div><div class="tile" style="height:52px">8</div><div class="tile" style="height:52px">9</div><div class="tile" style="height:52px">4</div><div class="tile" style="height:52px">5</div><div class="tile" style="height:52px">6</div><div class="tile" style="height:52px">1</div><div class="tile" style="height:52px">2</div><div class="tile" style="height:52px">3</div><div class="tile" style="height:52px">.</div><div class="tile" style="height:52px">0</div><div class="tile" style="height:52px">⌫</div></div></div>
+<div class="sec"><span class="lbl"><i class="b">D</i>例外（該当時のみ）</span>
+<div class="grid" style="grid-template-columns:1fr 1fr"><div class="tile" style="height:48px;font-size:16px">不足</div><div class="tile" style="height:48px;font-size:16px">超過</div><div class="tile" style="height:48px;font-size:16px">返却</div><div class="tile" style="height:48px;font-size:16px">部分キャンセル</div></div>
+<div class="f" style="margin-top:6px"><label><i class="b">D-1</i>理由（例外時必須）</label><div class="in" style="height:40px;font-size:15px"></div></div></div>
+<div style="display:flex;gap:8px"><span class="btn" style="flex:1"><i class="b">E</i>写真</span><span class="btn pri" style="flex:1"><i class="b">F</i>記録</span></div>
+</div></div>
+<div class="cap">Wireframe v1.0 — 資格確認の警告表示中（BR-15）</div>
+</div></div>
+<h2 id="SCR-021-022">SCR-021-022</h2><div class="frame pc" data-id="SCR-021-022"><div class="top"><b>桜水産市場 業務支援</b><span class="chip">業務日 2026-11-15（日）</span><span class="chip">SCR-021/022 参加者詳細・参加資格</span><span class="sp"></span><span>照合事務局 中村</span><span class="chip">ログアウト</span></div><div class="side"><div class="">ホーム</div><div class="on">参加者</div><div class="">ロット</div><div class="">相対取引 入力</div><div class="">せり結果</div><div class="">取引一覧</div><div class="">引渡しボード</div><div class="">日次照合・締め</div><div class="">修正依頼</div><div class="">完納奨励金</div><div class="">料率版</div><div class="">帳票・会計連携</div><div class="">監査ログ</div></div>
+<div class="main">
+<h1>N05 浜の丸友 <span class="st">仲卸</span> <span class="st hatch">失効間近（あと12日）</span></h1>
+<div class="sec"><span class="lbl"><i class="b">A</i>プロファイル</span>
+<div class="row"><div class="f"><label><i class="b">A-1</i>参加者コード</label><div class="in ro">N05</div></div><div class="f"><label><i class="b">A-2</i>名称<i>*</i></label><div class="in" style="width:220px">浜の丸友</div></div>
+<div class="f"><label><i class="b">A-3</i>参加区分</label><div class="in ro" style="width:110px">仲卸</div></div><div class="f"><label><i class="b">A-4</i>通知メール</label><div class="in" style="width:220px">n05@example.invalid</div></div>
+<div class="f"><label><i class="b">A-5</i>参加上限額（参考）</label><div class="in" style="width:120px;text-align:right">—</div></div><span class="btn">保存</span></div></div>
+<div style="display:flex;gap:2px;margin-bottom:14px"><span class="btn pri"><i class="b">B</i>参加資格</span><span class="btn">取引履歴</span><span class="btn">奨励金</span><span class="btn">変更履歴</span></div>
+<div class="sec"><span class="lbl">参加根拠：許可（仲卸は「許可」のみ登録可。承認・市場登録は選択不可）</span>
+<table><tr><th><i class="b">B-1</i>証番号</th><th>根拠</th><th>有効開始</th><th>最終有効日</th><th><i class="b">B-2</i>状態</th><th>状態理由</th><th>申請者</th><th>承認者</th><th><i class="b">B-3</i>操作</th></tr>
+<tr><td>K-N05-24</td><td>許可</td><td>2024-11-27</td><td>2026-11-27</td><td><span class="st">有効</span></td><td></td><td>中村</td><td>部長 小林</td><td><u>一時停止</u> <u>失効処分</u></td></tr>
+<tr><td>K-N05-26</td><td>許可</td><td>2026-11-28</td><td>2028-11-27</td><td><span class="st hatch">申請</span></td><td>更新申請</td><td>中村</td><td>—</td><td><span style="color:#aaa">承認（自分の申請）</span></td></tr>
+<tr><td>K-N05-22</td><td>許可</td><td>2022-11-27</td><td>2024-11-26</td><td><span class="st">期限切れ</span></td><td>BAT-03</td><td>—</td><td>—</td><td></td></tr>
+</table><div style="margin-top:8px"><span class="btn"><i class="b">B-4</i>＋ 資格登録（更新申請）</span></div></div>
+<div class="modal" style="left:420px;top:330px;width:480px"><b><i class="b">C</i>参加資格 登録（SCR-022）</b>
+<div class="grid" style="grid-template-columns:1fr 1fr;margin-top:8px">
+<div class="f"><label><i class="b">C-1</i>参加根拠</label><div class="in ro">許可（区分から固定）</div></div>
+<div class="f"><label><i class="b">C-2</i>証番号<i>*</i></label><div class="in">K-N05-26</div></div>
+<div class="f"><label><i class="b">C-3</i>有効開始日<i>*</i></label><div class="in">2026-11-28</div></div>
+<div class="f"><label><i class="b">C-4</i>最終有効日<i>*</i></label><div class="in">2028-11-27</div></div></div>
+<div class="f" style="margin-top:6px"><label><i class="b">C-5</i>備考</label><div class="in">許可更新（市長許可 第123号）</div></div>
+<p class="note" style="margin-top:6px">登録後「申請」状態。承認者（ROLE-APPROVER）が承認すると有効になります。</p>
+<div style="text-align:right;margin-top:6px"><span class="btn">キャンセル</span> <span class="btn pri">申請</span></div></div>
+<div class="cap">Wireframe v1.0</div>
+</div></div>
+<h2 id="SCR-070-072">SCR-070-072</h2><div class="frame pc" data-id="SCR-070-072"><div class="top"><b>桜水産市場 業務支援</b><span class="chip">業務日 2026-11-15（日）</span><span class="chip">SCR-070/072 日次照合・業務日締め</span><span class="sp"></span><span>照合事務局 中村</span><span class="chip">ログアウト</span></div><div class="side"><div class="">ホーム</div><div class="">参加者</div><div class="">ロット</div><div class="">相対取引 入力</div><div class="">せり結果</div><div class="">取引一覧</div><div class="">引渡しボード</div><div class="on">日次照合・締め</div><div class="">修正依頼</div><div class="">完納奨励金</div><div class="">料率版</div><div class="">帳票・会計連携</div><div class="">監査ログ</div></div>
+<div class="main">
+<h1>日次照合表 <span class="in" style="height:26px;padding:2px 8px"><i class="b">A</i>2026-11-15 ▼</span> <span class="st">営業中</span></h1>
+<div class="row" style="margin-bottom:10px"><div class="sec" style="width:150px;margin:0"><span class="lbl"><i class="b">B-1</i>相対 件数/金額</span><div style="font-size:20px;font-weight:bold;text-align:right">636 / 41.2M</div></div><div class="sec" style="width:150px;margin:0"><span class="lbl"><i class="b">B-2</i>せり 件数/金額</span><div style="font-size:20px;font-weight:bold;text-align:right">70 / 5.8M</div></div><div class="sec" style="width:150px;margin:0"><span class="lbl"><i class="b">B-3</i>赤黒 調整</span><div style="font-size:20px;font-weight:bold;text-align:right">3</div></div><div class="sec" style="width:150px;margin:0"><span class="lbl"><i class="b">B-4</i>未確定</span><div style="font-size:20px;font-weight:bold;text-align:right">2</div></div><div class="sec" style="width:150px;margin:0"><span class="lbl"><i class="b">B-5</i>引渡し未完了</span><div style="font-size:20px;font-weight:bold;text-align:right">9</div></div><div class="sec" style="width:150px;margin:0"><span class="lbl"><i class="b">B-6</i>引渡し例外</span><div style="font-size:20px;font-weight:bold;text-align:right">4</div></div></div>
+<div style="display:flex;gap:12px">
+<div style="flex:1" class="sec"><span class="lbl"><i class="b">C</i>明細（フラグのある行を上に表示）</span>
+<table><tr><th><i class="b">C-1</i>フラグ</th><th>取引コード</th><th>種別</th><th>買手</th><th>数量</th><th>金額</th><th>引渡し累計</th><th>状態</th></tr>
+<tr><td><span class="st dark">未確定</span></td><td>T261115-0158</td><td>せり</td><td>N02</td><td class="n">5.0</td><td class="n">36,000</td><td class="n">0</td><td>確認待ち</td></tr>
+<tr><td><span class="st dark">未確定</span></td><td>T261115-0161</td><td>せり</td><td>B03</td><td class="n">2.0</td><td class="n">7,400</td><td class="n">0</td><td>確認待ち</td></tr>
+<tr><td><span class="st hatch">引渡し例外</span></td><td>T261115-0139</td><td>相対</td><td>B01</td><td class="n">12.0</td><td class="n">27,600</td><td class="n">5.0</td><td>例外(資格確認)</td></tr>
+<tr><td><span class="st">調整</span></td><td>T261112-0044</td><td>相対</td><td>N01</td><td class="n">−2.0</td><td class="n">−9,600</td><td class="n">—</td><td>赤黒（CR-2026-00012）</td></tr>
+<tr><td></td><td>T261115-0143</td><td>相対</td><td>N01</td><td class="n">30.0</td><td class="n">144,000</td><td class="n">0</td><td>確定</td></tr>
+</table></div>
+<div style="width:330px">
+<div class="sec"><span class="lbl"><i class="b">D</i>締め前チェック（SCR-072）</span>
+<div>☐ <i class="b">D-1</i>未確定の取引 0 件 — <b>2件残り</b></div><div>☑ <i class="b">D-2</i>せり確認待ち 0 件 — 対象は上記に含む</div><div>☑ <i class="b">D-3</i>当日の修正依頼 承認待ち 0 件（警告のみ）</div><div>☐ <i class="b">D-4</i>引渡し例外 4 件（警告のみ。ロック後も記録可）</div>
+<div style="margin-top:10px"><span class="btn dis" style="width:100%"><i class="b">D-5</i>業務日をロック（未確定あり）</span></div></div>
+<div class="sec"><span class="lbl"><i class="b">E</i>ロック済み日の操作</span>
+<div class="note">ロック済み日を選択すると表示：</div><div style="margin-top:6px"><span class="btn" style="width:100%"><i class="b">E-1</i>締め再開を申請（承認制）</span></div><div style="margin-top:6px"><span class="btn" style="width:100%"><i class="b">E-2</i>照合データ公開を承認（承認者）</span></div></div>
+</div></div>
+<div class="cap">Wireframe v1.0</div>
+</div></div>
+<h2 id="SCR-081-082">SCR-081-082</h2><div class="frame pc" data-id="SCR-081-082"><div class="top"><b>桜水産市場 業務支援</b><span class="chip">業務日 2026-11-15（日）</span><span class="chip">SCR-082 修正依頼 審査</span><span class="sp"></span><span>承認者 小林（照合部門長）</span><span class="chip">ログアウト</span></div><div class="side"><div class="">ホーム</div><div class="">参加者</div><div class="">ロット</div><div class="">相対取引 入力</div><div class="">せり結果</div><div class="">取引一覧</div><div class="">引渡しボード</div><div class="">日次照合・締め</div><div class="on">修正依頼</div><div class="">完納奨励金</div><div class="">料率版</div><div class="">帳票・会計連携</div><div class="">監査ログ</div></div>
+<div class="main">
+<h1>修正依頼 CR-2026-00013 <span class="st hatch">承認待ち</span> <span class="note">対象取引 T261112-0044（業務日 2026-11-12 ロック済）</span></h1>
+<div style="display:flex;gap:12px">
+<div style="flex:1">
+<div class="sec"><span class="lbl"><i class="b">A</i>依頼内容（SCR-081 で起票）</span>
+<table><tr><th><i class="b">A-1</i>申請者</th><td>中村（照合事務局） 2026-11-15 10:22</td></tr><tr><th><i class="b">A-2</i>理由</th><td>引渡し時に 2 kg 不足を確認。買手と合意済みのため数量を訂正</td></tr>
+<tr><th><i class="b">A-3</i>精算・引渡しへの影響</th><td>あり → 証拠添付必須</td></tr><tr><th><i class="b">A-4</i>添付証拠</th><td><u>引渡し票_FAX_1112.pdf</u>　<u>写真_計量.jpg</u></td></tr></table></div>
+<div class="sec"><span class="lbl"><i class="b">B</i>変更前後の比較</span>
+<table><tr><th></th><th>数量</th><th>単価</th><th>金額</th></tr><tr><th><i class="b">B-1</i>現在の有効値</th><td class="n">30.0</td><td class="n">4,800</td><td class="n">144,000</td></tr><tr><th><i class="b">B-2</i>訂正後</th><td class="n"><b>28.0</b></td><td class="n">4,800</td><td class="n"><b>134,400</b></td></tr><tr><th>差</th><td class="n">−2.0</td><td class="n">0</td><td class="n">−9,600</td></tr></table></div>
+</div>
+<div style="width:470px">
+<div class="sec"><span class="lbl"><i class="b">C</i>承認時に生成される明細（プレビュー）</span>
+<table><tr><th>明細</th><th>種別</th><th>計上業務日</th><th>数量</th><th>金額</th></tr>
+<tr><td>#1</td><td>原始</td><td>2026-11-12</td><td class="n">30.0</td><td class="n">144,000</td></tr>
+<tr style="font-weight:bold"><td>#2</td><td>赤</td><td>2026-11-15</td><td class="n">−30.0</td><td class="n">−144,000</td></tr>
+<tr style="font-weight:bold"><td>#3</td><td>黒</td><td>2026-11-15</td><td class="n">28.0</td><td class="n">134,400</td></tr></table>
+<p class="note" style="margin-top:6px">取引コードは T261112-0044 のまま。11/12 の照合結果・帳票は変わりません。ロット残数量 +2.0。2026-11 期の奨励金は確定後なら次期差分。</p></div>
+<div class="sec"><span class="lbl"><i class="b">D</i>審査</span>
+<div class="f"><label><i class="b">D-1</i>コメント（却下・追加情報要求は必須）</label><div class="in" style="height:44px"></div></div>
+<div style="margin-top:8px;display:flex;gap:8px"><span class="btn pri"><i class="b">D-2</i>承認</span><span class="btn"><i class="b">D-3</i>追加情報を要求</span><span class="btn"><i class="b">D-4</i>却下</span></div>
+<p class="note" style="margin-top:6px">申請者本人は審査できません（ボタン非表示）。</p></div>
+</div></div>
+<div class="cap">Wireframe v1.0</div>
+</div></div>
+<h2 id="SCR-091">SCR-091</h2><div class="frame pc" data-id="SCR-091"><div class="top"><b>桜水産市場 業務支援</b><span class="chip">業務日 2026-11-15（日）</span><span class="chip">SCR-091 完納奨励金 計算・結果</span><span class="sp"></span><span>照合事務局 中村</span><span class="chip">ログアウト</span></div><div class="side"><div class="">ホーム</div><div class="">参加者</div><div class="">ロット</div><div class="">相対取引 入力</div><div class="">せり結果</div><div class="">取引一覧</div><div class="">引渡しボード</div><div class="">日次照合・締め</div><div class="">修正依頼</div><div class="on">完納奨励金</div><div class="">料率版</div><div class="">帳票・会計連携</div><div class="">監査ログ</div></div>
+<div class="main">
+<h1>完納奨励金 <span class="in" style="height:26px;padding:2px 8px"><i class="b">A-1</i>対象期 2026-10 ▼</span> <i class="b">A-2</i><span class="st">計算済</span> <span class="note"><i class="b">A-3</i>適用料率版 v3（発効 2026-10-01：交付率 1.50%・閾値 100,000円・税係数 110/100・支払期日 期末+10日 = 2026-11-10）</span></h1>
+<div class="row" style="margin-bottom:10px"><span class="btn"><i class="b">A-4</i>入金データ取込（SCR-090）</span><span class="btn pri"><i class="b">A-5</i>計算を実行</span><span class="btn"><i class="b">A-6</i>期を確定（承認者）</span><span class="btn"><i class="b">A-7</i>計算表 出力（FORM-INC-01）</span><span class="note">最終入金取込：2026-11-12 09:10（行 182）</span></div>
+<div class="sec"><span class="lbl"><i class="b">B</i>計算結果（本計算）</span>
+<table><tr><th><i class="b">B-1</i>参加者</th><th>区分</th><th><i class="b">B-2</i>適格金額(税抜)</th><th><i class="b">B-3</i>請求額</th><th><i class="b">B-4</i>期日内入金</th><th>最終入金日</th><th><i class="b">B-5</i>完納</th><th><i class="b">B-6</i>奨励金</th><th>理由</th></tr>
+<tr><td>N01 丸浜商店</td><td>仲卸</td><td class="n">3,420,000</td><td class="n">3,693,600</td><td class="n">3,693,600</td><td>2026-11-08</td><td>○</td><td class="n"><b>56,430</b></td><td></td></tr>
+<tr><td>B01 さくらスーパー</td><td>売買参加者</td><td class="n">1,250,300</td><td class="n">1,350,324</td><td class="n">1,350,324</td><td>2026-11-10</td><td>○</td><td class="n"><b>20,629</b></td><td>期日当日入金（当日を含む）</td></tr>
+<tr><td>K02 割烹 さくら</td><td>買出人</td><td class="n">310,000</td><td class="n">334,800</td><td class="n">0</td><td>2026-11-11</td><td>×</td><td class="n">0</td><td>期日超過</td></tr>
+<tr><td>B03 給食センター</td><td>売買参加者</td><td class="n">880,000</td><td class="n">950,400</td><td class="n">900,000</td><td>2026-11-09</td><td>×</td><td class="n">0</td><td>入金不足 50,400</td></tr>
+<tr><td>K03 鮮魚 まるいち</td><td>買出人</td><td class="n">98,000</td><td class="n">105,840</td><td class="n">105,840</td><td>2026-11-05</td><td>○</td><td class="n">0</td><td>閾値未満</td></tr></table></div>
+<div class="sec"><span class="lbl"><i class="b">C</i>次期差分（前期以前の確定済み結果に対する調整）</span>
+<table><tr><th>計上期</th><th>発生元期</th><th>参加者</th><th>差分</th><th>原因</th></tr><tr><td>2026-10</td><td>2026-09</td><td>N01 丸浜商店</td><td class="n">−159</td><td>CR-2026-00009（赤黒）による適格金額 −9,600</td></tr></table></div>
+<div class="cap">Wireframe v1.0 — 奨励金 = floor(適格金額 × 1.50% × 110/100)、期合計で1回切捨て（Q-07）</div>
+</div></div>
+<h2 id="SCR-101-102">SCR-101-102</h2><div class="frame pc" data-id="SCR-101-102"><div class="top"><b>桜水産市場 業務支援</b><span class="chip">業務日 2026-11-15（日）</span><span class="chip">SCR-100〜102 料率版</span><span class="sp"></span><span>ルール管理者 森</span><span class="chip">ログアウト</span></div><div class="side"><div class="">ホーム</div><div class="">参加者</div><div class="">ロット</div><div class="">相対取引 入力</div><div class="">せり結果</div><div class="">取引一覧</div><div class="">引渡しボード</div><div class="">日次照合・締め</div><div class="">修正依頼</div><div class="">完納奨励金</div><div class="on">料率版</div><div class="">帳票・会計連携</div><div class="">監査ログ</div></div>
+<div class="main">
+<h1>料率版 <span class="note"><i class="b">A</i>2026年度（4月〜3月）の承認済み変更：<b>3 / 4 回</b></span></h1>
+<div class="sec"><span class="lbl"><i class="b">B</i>版一覧（SCR-100）</span>
+<table><tr><th><i class="b">B-1</i>版</th><th>発効日</th><th>交付率</th><th>閾値</th><th>税係数</th><th>支払日数</th><th><i class="b">B-2</i>状態</th><th>起票</th><th>承認</th><th><i class="b">B-3</i>操作</th></tr>
+<tr><td>v5</td><td>2027-01-01</td><td class="n">1.60%</td><td class="n">100,000</td><td>110/100</td><td class="n">10</td><td><span class="st hatch">承認待ち</span></td><td>森</td><td>—</td><td><u>承認</u> <u>差戻し</u>（承認者のみ）</td></tr>
+<tr><td>v4</td><td>2026-12-01</td><td class="n">1.50%</td><td class="n">120,000</td><td>110/100</td><td class="n">10</td><td><span class="st">発効予定</span></td><td>森</td><td>小林</td><td><u>ロールバック</u></td></tr>
+<tr><td>v3</td><td>2026-10-01</td><td class="n">1.50%</td><td class="n">100,000</td><td>110/100</td><td class="n">10</td><td><span class="st dark">有効</span></td><td>森</td><td>小林</td><td><u>ロールバック</u></td></tr>
+<tr><td>v2</td><td>2026-07-01</td><td class="n">1.40%</td><td class="n">100,000</td><td>110/100</td><td class="n">10</td><td><span class="st">失効</span></td><td>森</td><td>小林</td><td></td></tr></table></div>
+<div style="display:flex;gap:12px">
+<div class="sec" style="flex:1"><span class="lbl"><i class="b">C</i>新しい版を起票（SCR-101）</span>
+<div class="grid" style="grid-template-columns:repeat(3,1fr)">
+<div class="f"><label><i class="b">C-1</i>発効日<i>*</i></label><div class="in">2027-01-01</div></div><div class="f"><label><i class="b">C-2</i>交付率（%）<i>*</i></label><div class="in" style="text-align:right">1.60</div></div><div class="f"><label><i class="b">C-3</i>最低閾値（円）<i>*</i></label><div class="in" style="text-align:right">100,000</div></div>
+<div class="f"><label><i class="b">C-4</i>税係数<i>*</i></label><div class="in">110 / 100</div></div><div class="f"><label><i class="b">C-5</i>支払日数<i>*</i></label><div class="in" style="text-align:right">10</div></div><div class="f"><label><i class="b">C-6</i>変更理由<i>*</i></label><div class="in">理事会決議 2026-12</div></div></div>
+<div style="margin-top:8px"><span class="btn">下書き保存</span> <span class="btn pri"><i class="b">C-7</i>承認依頼</span></div></div>
+<div class="sec" style="width:420px"><span class="lbl"><i class="b">D</i>直前の版との差分</span>
+<table><tr><th>項目</th><th>v4</th><th>v5（案）</th></tr><tr><td>交付率</td><td class="n">1.50%</td><td class="n"><b>1.60%</b></td></tr><tr><td>最低閾値</td><td class="n">120,000</td><td class="n"><b>100,000</b></td></tr></table>
+<div class="msg warn" style="margin-top:8px;font-size:12px"><i class="b">D-1</i>承認すると年度内 4 / 4 回になります。以降の版は 2027-04-01 以降の発効日のみ承認できます。</div></div></div>
+<div class="cap">Wireframe v1.0</div>
+</div></div>
+</div></body></html>
